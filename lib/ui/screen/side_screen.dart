@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:staylit_admin/ui/screen/Home_screen.dart';
 import 'package:staylit_admin/ui/screen/Room_screen.dart';
 import 'package:staylit_admin/ui/screen/User_screen.dart';
+import 'package:staylit_admin/ui/screen/Service_screen.dart';
 
 class SideScreen extends StatefulWidget {
   const SideScreen({super.key});
@@ -17,8 +18,9 @@ class _SideScreenState extends State<SideScreen>
   @override
   void initState() {
     tabController = TabController(
-      length: 3,
+      length: 4,
       vsync: this,
+      initialIndex: 2,
     );
     super.initState();
   }
@@ -87,6 +89,19 @@ class _SideScreenState extends State<SideScreen>
                 Navigator.pop(context);
               },
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            DrawerItem(
+              icon: Icons.home_repair_service,
+              isSelected: tabController!.index == 3,
+              label: 'Service',
+              onTap: () {
+                tabController!.animateTo(3);
+                setState(() {});
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
@@ -96,6 +111,7 @@ class _SideScreenState extends State<SideScreen>
           HomeScreen(),
           UserScreen(),
           RoomScreen(),
+          ServiceScreen(),
         ],
       ),
     );
