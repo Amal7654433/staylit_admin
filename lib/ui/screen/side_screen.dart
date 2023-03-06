@@ -20,7 +20,7 @@ class _SideScreenState extends State<SideScreen>
     tabController = TabController(
       length: 4,
       vsync: this,
-      initialIndex: 2,
+      initialIndex: 0,
     );
     super.initState();
   }
