@@ -3,6 +3,8 @@ import 'package:staylit_admin/ui/screen/Home_screen.dart';
 import 'package:staylit_admin/ui/screen/Room_screen.dart';
 import 'package:staylit_admin/ui/screen/User_screen.dart';
 import 'package:staylit_admin/ui/screen/Service_screen.dart';
+import 'package:staylit_admin/ui/screen/Staff_screen.dart';
+import 'package:staylit_admin/ui/screen/complaint_screen.dart';
 
 class SideScreen extends StatefulWidget {
   const SideScreen({super.key});
@@ -18,17 +20,48 @@ class _SideScreenState extends State<SideScreen>
   @override
   void initState() {
     tabController = TabController(
-      length: 4,
+      length: 6,
       vsync: this,
-      initialIndex: 0,
+      initialIndex: 3,
     );
+    tabController!.addListener(() {
+      setState(() {});
+    });
     super.initState();
+  }
+
+  String getName() {
+    switch (tabController!.index) {
+      case 0:
+        return "Home";
+      case 1:
+        return "User Details";
+      case 2:
+        return "Room Management";
+      case 3:
+        return "Service Management";
+      case 4:
+        return "Staff Details";
+      case 5:
+        return "Complaints";
+      default:
+        return "";
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          getName(),
+          style: const TextStyle(
+              color: Colors.black,
+              fontSize: 30,
+              letterSpacing: 10,
+              fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(
@@ -59,7 +92,6 @@ class _SideScreenState extends State<SideScreen>
               label: 'Home',
               onTap: () {
                 tabController!.animateTo(0);
-                setState(() {});
                 Navigator.pop(context);
               },
             ),
@@ -72,7 +104,6 @@ class _SideScreenState extends State<SideScreen>
               label: 'Users',
               onTap: () {
                 tabController!.animateTo(1);
-                setState(() {});
                 Navigator.pop(context);
               },
             ),
@@ -85,7 +116,6 @@ class _SideScreenState extends State<SideScreen>
               label: 'Rooms',
               onTap: () {
                 tabController!.animateTo(2);
-                setState(() {});
                 Navigator.pop(context);
               },
             ),
@@ -98,7 +128,30 @@ class _SideScreenState extends State<SideScreen>
               label: 'Service',
               onTap: () {
                 tabController!.animateTo(3);
-                setState(() {});
+                Navigator.pop(context);
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            DrawerItem(
+              icon: Icons.workspaces_rounded,
+              isSelected: tabController!.index == 4,
+              label: 'Staff',
+              onTap: () {
+                tabController!.animateTo(4);
+                Navigator.pop(context);
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            DrawerItem(
+              icon: Icons.report,
+              isSelected: tabController!.index == 5,
+              label: 'Complaints',
+              onTap: () {
+                tabController!.animateTo(5);
                 Navigator.pop(context);
               },
             ),
@@ -112,6 +165,8 @@ class _SideScreenState extends State<SideScreen>
           UserScreen(),
           RoomScreen(),
           ServiceScreen(),
+          StaffScreen(),
+          ComplaintsScreen(),
         ],
       ),
     );

@@ -7,6 +7,9 @@ import 'package:staylit_admin/ui/screen/user_screen.dart';
 import 'package:staylit_admin/ui/screen/room_screen.dart';
 import 'package:staylit_admin/ui/screen/add_staff_screen.dart';
 import 'package:staylit_admin/ui/screen/staff_screen.dart';
+import 'package:staylit_admin/ui/screen/log_screen.dart';
+import 'package:staylit_admin/ui/screen/setting_screen.dart';
+import 'package:staylit_admin/ui/screen/add_user_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const SideScreen(),
+      home: const LogScreen(),
     );
   }
 }

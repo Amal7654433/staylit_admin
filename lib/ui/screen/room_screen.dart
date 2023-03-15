@@ -28,7 +28,7 @@ class RoomScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               InfoCard(
-                label: 'Total Rooms',
+                label: 'Rooms',
                 value: '100',
               ),
               InfoCard(

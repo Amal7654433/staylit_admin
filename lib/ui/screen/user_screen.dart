@@ -17,53 +17,64 @@ class UserScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
-                    "USER DETAILS",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineSmall
-                        ?.copyWith(color: Colors.red),
-                  ),
-                  const SizedBox(
-                      height: 35,
-                      width: 150,
+                  SizedBox(
+                      height: 40,
+                      width: 700,
                       child: TextField(
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10),
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 4,
+                            ),
                             hintText: "search",
                             prefixIcon: Icon(Icons.search),
-                            border: InputBorder.none,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: BorderSide.none,
+                            ),
                             filled: true,
                             fillColor: Colors.black12),
                       ))
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  CustomButton(),
+                children: [
+                  CustomButton(
+                    label: 'F1',
+                    onTap: () {},
+                  ),
                   SizedBox(
                     width: 30,
                   ),
-                  CustomButton(),
+                  CustomButton(
+                    label: 'F2',
+                    onTap: () {},
+                  ),
                   SizedBox(
                     width: 30,
                   ),
-                  CustomButton(),
+                  CustomButton(
+                    label: 'F3',
+                    onTap: () {},
+                  ),
                 ],
               ),
               const SizedBox(
                 height: 30,
               ),
-              const CustomCard(),
-              const CustomCard(),
-              const CustomCard(),
-              const CustomCard(),
-              const CustomCard(),
-              const CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
+              CustomCard(),
             ],
           ),
         ),

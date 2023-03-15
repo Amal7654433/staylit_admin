@@ -28,85 +28,69 @@ class Addstaff extends StatelessWidget {
           elevation: 40,
         ),
         body: Center(
-          child: ListView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                padding: const EdgeInsets.fromLTRB(200, 100, 0, 0),
-                child: Text(
-                  "Add new",
-                  style: TextStyle(
-                      letterSpacing: 10,
-                      fontSize: 30,
-                      wordSpacing: 5,
-                      fontWeight: FontWeight.bold),
-                ),
+              Text(
+                "Add new",
+                style: TextStyle(
+                    letterSpacing: 10,
+                    fontSize: 30,
+                    wordSpacing: 5,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(200, 0, 300, 0),
-                child: SizedBox(
-                  width: 10,
-                  child: TextField(
-                    style: TextStyle(fontSize: 20),
-                    decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 20),
-                        labelText: ' Name',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
+              TextField(
+                style: TextStyle(fontSize: 20),
+                decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 20),
+                    labelText: ' Name',
+                    border: OutlineInputBorder()),
               ),
               SizedBox(
                 height: 30,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(200, 0, 300, 0),
-                child: SizedBox(
-                  width: 10,
-                  child: TextField(
-                    style: TextStyle(fontSize: 20),
-                    decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 20),
-                        labelText: '  Job title',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
+              TextField(
+                style: TextStyle(fontSize: 20),
+                decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 20),
+                    labelText: '  Job title',
+                    border: OutlineInputBorder()),
               ),
               SizedBox(
                 height: 30,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(200, 0, 300, 0),
-                child: SizedBox(
-                  width: 10,
-                  child: TextField(
-                    style: TextStyle(fontSize: 20),
-                    decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 20),
-                        labelText: ' Phone number',
-                        border: OutlineInputBorder()),
-                  ),
-                ),
+              TextField(
+                style: TextStyle(fontSize: 20),
+                decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 20),
+                    labelText: ' Phone number',
+                    border: OutlineInputBorder()),
               ),
               SizedBox(
                 height: 70,
                 child: Padding(
-                    padding:
-                        const EdgeInsets.only(left: 650, right: 700, top: 20),
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.blue, //background color of button
-                            side: BorderSide(
-                                width: 3,
-                                color: Colors.black), //border width and color
-                            elevation: 3, //elevation of button
-                            shape: RoundedRectangleBorder(
-                                //to set border radius to button
-                                borderRadius: BorderRadius.circular(30))),
-                        child: Text("Done"))),
-              )
+                  padding:
+                      const EdgeInsets.only(left: 650, right: 700, top: 20),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.blue, //background color of button
+                        side: BorderSide(
+                            width: 3,
+                            color: Colors.black), //border width and color
+                        elevation: 3, //elevation of button
+                        shape: RoundedRectangleBorder(
+                            //to set border radius to button
+                            borderRadius: BorderRadius.circular(30))),
+                    child: Text(
+                      "Done",
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ));

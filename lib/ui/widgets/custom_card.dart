@@ -10,12 +10,13 @@ class CustomCard extends StatelessWidget {
     return Column(
       children: [
         Container(
-          color: Colors.black,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(35), color: Colors.blueGrey),
           alignment: Alignment.topLeft,
-          width: 800,
-          height: 160,
+          width: 700,
+          height: 120,
           child: Padding(
-            padding: const EdgeInsets.all(30),
+            padding: const EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -30,7 +31,7 @@ class CustomCard extends StatelessWidget {
                       children: [
                         Text(
                           "Name",
-                          style: TextStyle(color: Colors.white, fontSize: 25),
+                          style: TextStyle(color: Colors.white, fontSize: 15),
                         ),
                         SizedBox(height: 15),
                         Text(
@@ -51,14 +52,15 @@ class CustomCard extends StatelessWidget {
                     Text("Room No",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 10,
+                          fontSize: 15,
                         )),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "A1",
-                      style: TextStyle(color: Colors.white, fontSize: 40),
+                    SizedBox(height: 5),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "A1",
+                        style: TextStyle(color: Colors.white, fontSize: 30),
+                      ),
                     )
                   ],
                 )
